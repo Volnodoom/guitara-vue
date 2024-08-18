@@ -1,6 +1,10 @@
+import '~/assets/css/global.css';
+
+<script lang="ts">
+</script>
+
 <template>
   <div>
-    <NuxtRouteAnnouncer />
-    <NuxtWelcome />
+    <NuxtPage/>
   </div>
 </template>
