@@ -1,10 +1,12 @@
-import '~/assets/css/global.css';
+<template>
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
+</template>
 
-<script lang="ts">
+<script>
 </script>
 
-<template>
-  <div>
-    <NuxtPage/>
-  </div>
-</template>
+<style>
+  @import './global.css';
+</style>

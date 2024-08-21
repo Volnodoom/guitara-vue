@@ -2,12 +2,20 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxt/eslint'],
+  components: [
+    {
+      path: '~/components',
+      pathPrefix: false,
+    },
+  ],
   typescript: {
     strict: false,
   },
   eslint: {
     config: {
       stylistic: true,
+      indent: 2,
+      quotes: 'double',
     },
   },
-})
+});

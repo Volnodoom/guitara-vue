@@ -1,16 +1,16 @@
 <template>
-  <body>
-    <SvgSprint />
-  </body>
+  <SvgSprint />
+  <div class="wrapper">
+    <CustomHeader />
+    <main class="page-content">
+      <slot />
+    </main>
+    <CustomFooter />
+  </div>
 </template>
 
-<script>
+<script setup>
 import SvgSprint from '~/ui/svg-sprint/svg-sprint.vue'
-
-export default {
-  components: {
-    SvgSprint,
-  },
-
-}
+import CustomHeader from '~/ui/custom-header/custom-header.vue'
+import CustomFooter from '~/ui/custom-footer/custom-footer.vue'
 </script>
