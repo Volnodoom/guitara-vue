@@ -3,132 +3,9 @@
     <h1 class="page-content__title title title--bigger">
       Каталог гитар
     </h1>
-    <ul class="breadcrumbs page-content__breadcrumbs">
-      <li class="breadcrumbs__item">
-        <a
-          class="link"
-          href="./main.html"
-        >Главная</a>
-      </li>
-      <li class="breadcrumbs__item">
-        <a class="link">Каталог</a>
-      </li>
-    </ul>
+    <BreadcrumbsBasic />
     <div class="catalog">
-      <form class="catalog-filter">
-        <h2 class="title title--bigger catalog-filter__title">
-          Фильтр
-        </h2>
-        <fieldset class="catalog-filter__block">
-          <legend class="catalog-filter__block-title">
-            Цена, ₽
-          </legend>
-          <div class="catalog-filter__price-range">
-            <div class="form-input">
-              <label class="visually-hidden">Минимальная цена</label>
-              <input
-                id="priceMin"
-                type="number"
-                placeholder="1 000"
-                name="от"
-              >
-            </div>
-            <div class="form-input">
-              <label class="visually-hidden">Максимальная цена</label>
-              <input
-                id="priceMax"
-                type="number"
-                placeholder="30 000"
-                name="до"
-              >
-            </div>
-          </div>
-        </fieldset>
-        <fieldset class="catalog-filter__block">
-          <legend class="catalog-filter__block-title">
-            Тип гитар
-          </legend>
-          <div class="form-checkbox catalog-filter__block-item">
-            <input
-              id="acoustic"
-              class="visually-hidden"
-              type="checkbox"
-              name="acoustic"
-            >
-            <label for="acoustic">Акустические гитары</label>
-          </div>
-          <div class="form-checkbox catalog-filter__block-item">
-            <input
-              id="electric"
-              class="visually-hidden"
-              type="checkbox"
-              name="electric"
-              checked
-            >
-            <label for="electric">Электрогитары</label>
-          </div>
-          <div class="form-checkbox catalog-filter__block-item">
-            <input
-              id="ukulele"
-              class="visually-hidden"
-              type="checkbox"
-              name="ukulele"
-              checked
-            >
-            <label for="ukulele">Укулеле</label>
-          </div>
-        </fieldset>
-        <fieldset class="catalog-filter__block">
-          <legend class="catalog-filter__block-title">
-            Количество струн
-          </legend>
-          <div class="form-checkbox catalog-filter__block-item">
-            <input
-              id="4-strings"
-              class="visually-hidden"
-              type="checkbox"
-              name="4-strings"
-              checked
-            >
-            <label for="4-strings">4</label>
-          </div>
-          <div class="form-checkbox catalog-filter__block-item">
-            <input
-              id="6-strings"
-              class="visually-hidden"
-              type="checkbox"
-              name="6-strings"
-              checked
-            >
-            <label for="6-strings">6</label>
-          </div>
-          <div class="form-checkbox catalog-filter__block-item">
-            <input
-              id="7-strings"
-              class="visually-hidden"
-              type="checkbox"
-              name="7-strings"
-            >
-            <label for="7-strings">7</label>
-          </div>
-          <div class="form-checkbox catalog-filter__block-item">
-            <input
-              id="12-strings"
-              class="visually-hidden"
-              type="checkbox"
-              name="12-strings"
-              disabled
-            >
-            <label for="12-strings">12</label>
-          </div>
-        </fieldset>
-        <button
-          class="catalog-filter__reset-btn button button--black-border button--medium"
-          type="reset"
-        >
-          Очистить
-        </button>
-      </form>
+      <CatalogFiltration />
       <div class="catalog-sort">
         <h2 class="catalog-sort__title">
           Сортировать:
@@ -178,6 +55,8 @@
 <script setup lang="ts">
 import CardCatalog from '~/ui/card/card-catalog/card-catalog.vue';
 import PaginationBasic from '~/ui/pagination/pagination-basic/pagination-basic.vue';
+import BreadcrumbsBasic from "~/ui/breadcrumbs/breadcrumbs-basic.vue";
+import CatalogFiltration from "~/components/catalog-filtration/catalog-filtration.vue";
 
 definePageMeta({
   layout: 'default',

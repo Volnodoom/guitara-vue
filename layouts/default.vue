@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-import SvgSprint from '~/ui/svg-sprint/svg-sprint.vue'
-import CustomHeader from '~/ui/custom-header/custom-header.vue'
-import CustomFooter from '~/ui/custom-footer/custom-footer.vue'
+import SvgSprint from '~/ui/svg-sprint/svg-sprint.vue';
+import CustomHeader from '~/ui/custom-header/custom-header.vue';
+import CustomFooter from '~/ui/custom-footer/custom-footer.vue';
 </script>

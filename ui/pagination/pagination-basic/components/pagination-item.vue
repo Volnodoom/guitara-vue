@@ -34,7 +34,7 @@ watchEffect(async () => {
   isSpecial.value = !parseInt(text.value, 10);
 
   if (!hasPagination) {
-    await navigateTo ({ query: { ...rout.query, pagination: 1 } });
+    await navigateTo ({ query: { ...query, pagination: 1 } });
   }
 
   isActivePagination.value = query?.pagination === text.value;

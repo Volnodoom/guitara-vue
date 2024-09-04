@@ -48,7 +48,4 @@ type CardCatalogType = {
 };
 
 defineProps<CardCatalogType>();
-const rout = useRoute();
-console.log({ rout: rout.query });
-
 </script>
