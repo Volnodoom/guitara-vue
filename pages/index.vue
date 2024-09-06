@@ -55,8 +55,8 @@
 <script setup lang="ts">
 import CardCatalog from '~/ui/card/card-catalog/card-catalog.vue';
 import PaginationBasic from '~/ui/pagination/pagination-basic/pagination-basic.vue';
-import BreadcrumbsBasic from "~/ui/breadcrumbs/breadcrumbs-basic.vue";
-import CatalogFiltration from "~/components/catalog-filtration/catalog-filtration.vue";
+import BreadcrumbsBasic from '~/ui/breadcrumbs/breadcrumbs-basic.vue';
+import CatalogFiltration from '~/components/catalog-filtration/catalog-filtration.vue';
 
 definePageMeta({
   layout: 'default',
