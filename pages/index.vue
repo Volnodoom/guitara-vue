@@ -7,33 +7,7 @@
     <div class="catalog">
       <CatalogFiltration />
       <div class="catalog-sort">
-        <h2 class="catalog-sort__title">
-          Сортировать:
-        </h2>
-        <div class="catalog-sort__type">
-          <button
-            class="catalog-sort__type-button"
-            aria-label="по цене"
-          >
-            по цене
-          </button>
-          <button
-            class="catalog-sort__type-button"
-            aria-label="по популярности"
-          >
-            по популярности
-          </button>
-        </div>
-        <div class="catalog-sort__order">
-          <button
-            class="catalog-sort__order-button catalog-sort__order-button--up"
-            aria-label="По возрастанию"
-          />
-          <button
-            class="catalog-sort__order-button catalog-sort__order-button--down"
-            aria-label="По убыванию"
-          />
-        </div>
+        <Sorting />
       </div>
       <div class="cards catalog__cards">
         <CardCatalog
@@ -57,6 +31,7 @@ import CardCatalog from '~/ui/card/card-catalog/card-catalog.vue';
 import PaginationBasic from '~/ui/pagination/pagination-basic/pagination-basic.vue';
 import BreadcrumbsBasic from '~/ui/breadcrumbs/breadcrumbs-basic.vue';
 import CatalogFiltration from '~/components/catalog-filtration/catalog-filtration.vue';
+import Sorting from '~/ui/sorting/sorting.vue';
 
 definePageMeta({
   layout: 'default',
