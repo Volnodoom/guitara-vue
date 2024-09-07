@@ -4,4 +4,10 @@ export const RatingCorrelation = {
   3: 'Удовлетворительно',
   4: 'Хорошо',
   5: 'Отлично',
+};
+
+export enum SocialsNS {
+  Skype = 'skype',
+  Vsco = 'vsco',
+  Pinterest = 'pinterest',
 }
