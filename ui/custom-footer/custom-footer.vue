@@ -1,13 +1,7 @@
 <template>
   <footer class="footer">
     <div class="footer__container container">
-      <a class="footer__logo logo"><img
-        class="logo__img"
-        width="70"
-        height="70"
-        src="/assets/img/svg/logo.svg"
-        alt="Логотип"
-      ></a>
+      <BaseLogo is-footer />
       <div class="socials footer__socials">
         <ul class="socials__list">
           <li class="socials-item">
@@ -138,8 +132,7 @@
   </footer>
 </template>
 
-<script>
-export default {
-  name: 'CustomFooter',
-}
+<script setup lang="ts">
+
+import BaseLogo from "~/ui/logo/base-logo.vue";
 </script>

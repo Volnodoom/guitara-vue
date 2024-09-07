@@ -1,5 +1,7 @@
 <template>
-  <a class="header__logo logo">
+  <a
+    :class="`${isFooter ? 'footer__logo' : 'header__logo'}` +' logo'"
+  >
     <img
       class="logo__img"
       width="70"
@@ -11,5 +13,9 @@
 </template>
 
 <script setup lang="ts">
+type HeadLogoProps = {
+  isFooter?: boolean
+};
 
+defineProps<HeadLogoProps>();
 </script>

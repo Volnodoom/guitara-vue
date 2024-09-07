@@ -4,7 +4,7 @@
     class="header"
   >
     <div class="container header__wrapper">
-      <HeadLogo />
+      <Logo />
       <HeadNavigation />
       <HeadSearch />
       <HeadCart />
@@ -16,5 +16,5 @@
 import HeadNavigation from '~/ui/custom-header/components/head-navigation.vue';
 import HeadSearch from '~/ui/custom-header/components/head-search.vue';
 import HeadCart from '~/ui/custom-header/components/head-cart.vue';
-import HeadLogo from '~/ui/custom-header/components/head-logo.vue';
+import Logo from '~/ui/logo/base-logo.vue';
 </script>
