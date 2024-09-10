@@ -9,7 +9,7 @@
     >
 
     <div class="product-card__info">
-      <TheRating
+      <RatingCatalogCard
         :rating="rating"
         :vote-count="voteCount"
       />
@@ -36,7 +36,7 @@
 </template>
 
 <script setup lang="ts">
-import TheRating from '~/ui/rating/the-rating.vue';
+import RatingCatalogCard from '~/components/rating/rating-catalog/rating-catalog-card.vue';
 
 type CardCatalogType = {
   title: string

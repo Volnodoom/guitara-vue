@@ -1,7 +1,7 @@
 <template>
   <svg
-    width="12"
-    height="11"
+    :width="starSize || 12"
+    :height="starSize || 12"
     aria-hidden="true"
   >
     <use
@@ -15,11 +15,11 @@
   </svg>
 </template>
 
-<script setup>
-defineProps({
-  isActive: {
-    type: Boolean,
-    required: true,
-  },
-})
+<script setup lang="ts">
+type RatingItemProps = {
+  isActive: boolean
+  starSize?: number
+};
+
+defineProps<RatingItemProps>();
 </script>

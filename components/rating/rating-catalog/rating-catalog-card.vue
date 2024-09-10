@@ -18,13 +18,13 @@
 </template>
 
 <script setup lang="ts">
-import { RatingCorrelation } from '~/utils/name-space/global-ns'
-import RatingItem from '~/ui/rating/components/rating-item.vue'
+import { RatingCorrelation } from '~/utils/name-space/global-ns';
+import RatingItem from '~/ui/rating/rating-item.vue';
 
 type TheRatingType = {
   rating: number
   voteCount: number
-}
+};
 
-defineProps<TheRatingType>()
+defineProps<TheRatingType>();
 </script>
