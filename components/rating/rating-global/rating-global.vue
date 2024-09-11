@@ -4,7 +4,7 @@
       v-for="i in 5"
       :key="i"
       :is-active="i <= rating"
-      :star-size="size"
+      :star-size="size || 12"
     />
 
     <p class="visually-hidden">
@@ -18,7 +18,7 @@ import { RatingCorrelation } from '~/utils/name-space/global-ns';
 import RatingItem from '~/ui/rating/rating-item.vue';
 
 type RatingGlobalProps = {
-  className?: string
+  className: string
   rating: number
   size?: number
 };
