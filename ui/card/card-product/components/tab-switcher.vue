@@ -1,9 +1,14 @@
 <template>
   <a
-    class="button button--medium tabs__button"
-    :class="{ 'button--black-border': !isSelected }"
+    class="button button--medium tabs__button button--prevent-hover"
+    :class="{
+      'button--black-border': !isSelected,
+      'button--prevent-hover': isSelected,
+    }"
     :href="`${htag}`"
-  >{{ title }}</a>
+  >
+    {{ title }}
+  </a>
 </template>
 
 <script setup lang="ts">
@@ -15,3 +20,12 @@ type TabSwitcherProps = {
 
 defineProps<TabSwitcherProps>();
 </script>
+
+<style scoped lang="scss">
+.button--prevent-hover {
+  &:hover {
+    color: #fefafa;
+    background-color: #131212;
+  }
+}
+</style>

@@ -1,22 +1,34 @@
 <template>
   <div class="product-container__info-wrapper">
     <h2 class="product-container__title title title--big title--uppercase">
-      СURT Z30 Plus
+      {{ guitarName }}
     </h2>
     <RatingGlobal
       class-name="rate product-container__rating"
-      :rating="mockData.rating"
+      :rating="rating"
       :size="14"
     />
-    <TabCharacteristics />
+    <ProductDetails
+      :articul="articul"
+      :guitar-type="guitarType"
+      :number-of-strings="numberOfStrings"
+      :description="description"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
 import RatingGlobal from '~/components/rating/rating-global/rating-global.vue';
-import TabCharacteristics from '~/ui/card/card-product/components/tab-characteristics.vue';
+import ProductDetails from '~/ui/card/card-product/components/product-details.vue';
 
-const mockData = {
-  rating: 4,
+type ProductInfoType = {
+  guitarName: string
+  articul: string
+  guitarType: string
+  numberOfStrings: string
+  description: string
+  rating: number
 };
+
+defineProps<ProductInfoType>();
 </script>

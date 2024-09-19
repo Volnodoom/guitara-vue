@@ -8,21 +8,29 @@
       height="235"
       alt=""
     >
-    <ProductInfo />
-    <div class="product-container__price-wrapper">
-      <p class="product-container__price-info product-container__price-info--title">
-        Цена:
-      </p>
-      <p class="product-container__price-info product-container__price-info--value">
-        52 000 ₽
-      </p><a
-        class="button button--red button--big product-container__button"
-        href="#"
-      >Добавить в корзину</a>
-    </div>
+    <ProductInfo
+      :guitar-name="mockData.guitarName"
+      :articul="mockData.articul"
+      :guitar-type="mockData.guitarType"
+      :number-of-strings="mockData.numberOfStrings"
+      :description="mockData.description"
+      :rating="mockData.rating"
+    />
+    <ProductPrice :price="mockData.price" />
   </div>
 </template>
 
 <script setup lang="ts">
 import ProductInfo from '~/ui/card/card-product/components/product-info.vue';
+import ProductPrice from '~/ui/card/card-product/components/product-price.vue';
+
+const mockData = {
+  guitarName: 'СURT Z30 Plus',
+  articul: 'SO754565',
+  guitarType: 'Электрогитара',
+  numberOfStrings: '6 струнная',
+  description: 'Гитара подходит как для старта обучения, так и для домашних занятий или использования в полевых условиях, например, в походах или для проведения уличных выступлений. Доступная стоимость, качество и надежная конструкция, а также приятный внешний вид, который сделает вас звездой вечеринки.',
+  price: 129500,
+  rating: 4,
+};
 </script>

@@ -14,13 +14,16 @@
       id="characteristics"
       class="tabs__content"
     >
-      <table class="tabs__table">
+      <table
+        class="tabs__table"
+        :class="{ hidden: activeTabName !== TabNames.Characteristics }"
+      >
         <tr class="tabs__table-row">
           <td class="tabs__title">
             Артикул:
           </td>
           <td class="tabs__value">
-            SO754565
+            {{ articul }}
           </td>
         </tr>
         <tr class="tabs__table-row">
@@ -28,7 +31,7 @@
             Тип:
           </td>
           <td class="tabs__value">
-            Электрогитара
+            {{ guitarType }}
           </td>
         </tr>
         <tr class="tabs__table-row">
@@ -36,12 +39,15 @@
             Количество струн:
           </td>
           <td class="tabs__value">
-            6 струнная
+            {{ numberOfStrings }} струнная
           </td>
         </tr>
       </table>
-      <p class="tabs__product-description hidden">
-        Гитара подходит как для старта обучения, так и для домашних занятий или использования в полевых условиях, например, в походах или для проведения уличных выступлений. Доступная стоимость, качество и надежная конструкция, а также приятный внешний вид, который сделает вас звездой вечеринки.
+      <p
+        class="tabs__product-description"
+        :class="{ hidden: activeTabName !== TabNames.Description }"
+      >
+        {{ description }}
       </p>
     </div>
   </div>
@@ -54,17 +60,24 @@ const enum TabNames {
   Characteristics = '#characteristics',
   Description = '#description',
 }
+
+type ProductDetailsProps = {
+  description: string
+  articul: string
+  guitarType: string
+  numberOfStrings: string
+};
+
+defineProps<ProductDetailsProps>();
 const activeTabName = ref(TabNames.Characteristics);
 const route = useRoute();
 
 watchEffect(() => {
-  if (route.hash) {
-    if (route.hash === TabNames.Characteristics) {
-      activeTabName.value = TabNames.Characteristics;
-    }
-    else if (route.hash === TabNames.Description) {
-      activeTabName.value = TabNames.Description;
-    }
+  if (route.hash && route.hash === TabNames.Description) {
+    activeTabName.value = TabNames.Description;
+  }
+  else {
+    activeTabName.value = TabNames.Characteristics;
   }
 });
 
