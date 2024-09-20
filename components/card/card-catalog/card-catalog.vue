@@ -24,7 +24,7 @@
     <div class="product-card__buttons">
       <a
         class="button button--mini"
-        href="#"
+        :href="`/products/${urlMoreDetails}`"
       >Подробнее</a>
 
       <a
@@ -45,6 +45,7 @@ type CardCatalogType = {
   voteCount: number
   image: string
   image2x: string
+  urlMoreDetails: number
 };
 
 defineProps<CardCatalogType>();

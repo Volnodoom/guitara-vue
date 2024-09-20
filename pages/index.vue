@@ -27,7 +27,7 @@
 </template>
 
 <script setup lang="ts">
-import CardCatalog from '~/ui/card/card-catalog/card-catalog.vue';
+import CardCatalog from '~/components/card/card-catalog/card-catalog.vue';
 import PaginationBasic from '~/ui/pagination/pagination-basic/pagination-basic.vue';
 import BreadcrumbsBasic from '~/ui/breadcrumbs/breadcrumbs-basic.vue';
 import CatalogFiltration from '~/components/catalog-filtration/catalog-filtration.vue';
@@ -46,6 +46,7 @@ const mockData = [
     image2x: '/assets/img/content/catalog-product-0@2x.jpg',
     rating: 2,
     voteCount: 9,
+    urlMoreDetails: 261,
   },
   {
     id: 2,
@@ -55,6 +56,7 @@ const mockData = [
     image2x: '/assets/img/content/catalog-product-1@2x.jpg',
     rating: 5,
     voteCount: 12,
+    urlMoreDetails: 747,
   },
   {
     id: 3,
@@ -64,6 +66,7 @@ const mockData = [
     image2x: '/assets/img/content/catalog-product-2@2x.jpg',
     rating: 4,
     voteCount: 8,
+    urlMoreDetails: 509,
   },
   {
     id: 4,
@@ -73,6 +76,7 @@ const mockData = [
     image2x: '/assets/img/content/catalog-product-3@2x.jpg',
     rating: 1,
     voteCount: 10,
+    urlMoreDetails: 877,
   },
   {
     id: 5,
@@ -82,6 +86,7 @@ const mockData = [
     image2x: '/assets/img/content/catalog-product-4@2x.jpg',
     rating: 5,
     voteCount: 15,
+    urlMoreDetails: 185,
   },
   {
     id: 6,
@@ -91,6 +96,7 @@ const mockData = [
     image2x: '/assets/img/content/catalog-product-5@2x.jpg',
     rating: 3,
     voteCount: 9,
+    urlMoreDetails: 610,
   },
   {
     id: 7,
@@ -100,6 +106,7 @@ const mockData = [
     image2x: '/assets/img/content/catalog-product-6@2x.jpg',
     rating: 4,
     voteCount: 8,
+    urlMoreDetails: 106,
   },
   {
     id: 8,
@@ -109,6 +116,7 @@ const mockData = [
     image2x: '/assets/img/content/catalog-product-7@2x.jpg',
     rating: 3,
     voteCount: 10,
+    urlMoreDetails: 128,
   },
   {
     id: 9,
@@ -118,6 +126,7 @@ const mockData = [
     image2x: '/assets/img/content/catalog-product-8@2x.jpg',
     rating: 4,
     voteCount: 9,
+    urlMoreDetails: 576,
   },
   {
     id: 10,
@@ -127,6 +136,7 @@ const mockData = [
     image2x: '/assets/img/content/catalog-product-8@2x.jpg',
     rating: 5,
     voteCount: 8,
+    urlMoreDetails: 806,
   },
   {
     id: 11,
@@ -136,6 +146,7 @@ const mockData = [
     image2x: '/assets/img/content/catalog-product-7@2x.jpg',
     rating: 4,
     voteCount: 10,
+    urlMoreDetails: 191,
   },
   {
     id: 12,
@@ -145,6 +156,7 @@ const mockData = [
     image2x: '/assets/img/content/catalog-product-6@2x.jpg',
     rating: 1,
     voteCount: 9,
+    urlMoreDetails: 396,
   },
   {
     id: 13,
@@ -154,6 +166,7 @@ const mockData = [
     image2x: '/assets/img/content/catalog-product-5@2x.jpg',
     rating: 4,
     voteCount: 8,
+    urlMoreDetails: 520,
   },
 ];
 </script>

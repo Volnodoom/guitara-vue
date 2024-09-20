@@ -54,7 +54,7 @@
 </template>
 
 <script setup lang="ts">
-import TabSwitcher from '~/ui/card/card-product/components/tab-switcher.vue';
+import TabSwitcher from '~/components/card/card-product/components/tab-switcher.vue';
 
 const enum TabNames {
   Characteristics = '#characteristics',

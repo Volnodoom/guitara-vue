@@ -19,7 +19,7 @@
 
 <script setup lang="ts">
 import RatingGlobal from '~/components/rating/rating-global/rating-global.vue';
-import ProductDetails from '~/ui/card/card-product/components/product-details.vue';
+import ProductDetails from '~/components/card/card-product/components/product-details.vue';
 
 type ProductInfoType = {
   guitarName: string

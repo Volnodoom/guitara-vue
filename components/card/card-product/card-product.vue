@@ -21,8 +21,8 @@
 </template>
 
 <script setup lang="ts">
-import ProductInfo from '~/ui/card/card-product/components/product-info.vue';
-import ProductPrice from '~/ui/card/card-product/components/product-price.vue';
+import ProductInfo from '~/components/card/card-product/components/product-info.vue';
+import ProductPrice from '~/components/card/card-product/components/product-price.vue';
 
 const mockData = {
   guitarName: 'СURT Z30 Plus',
