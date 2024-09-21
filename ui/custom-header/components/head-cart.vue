@@ -1,7 +1,7 @@
 <template>
   <a
     class="header__cart-link"
-    href="#"
+    href="/cart"
     aria-label="Корзина"
   >
     <svg

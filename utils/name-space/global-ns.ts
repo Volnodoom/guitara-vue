@@ -11,3 +11,8 @@ export enum SocialsNS {
   Vsco = 'vsco',
   Pinterest = 'pinterest',
 }
+
+export enum ChangeCountLib {
+  Increase = 'increase',
+  Decrease = 'decrease',
+}
