@@ -11,7 +11,7 @@
       :is-selected="activeTabName === TabNames.Description"
     />
     <div
-      id="characteristics"
+      :id="activeTabName.replace('#', '')"
       class="tabs__content"
     >
       <table

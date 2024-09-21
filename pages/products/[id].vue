@@ -5,12 +5,14 @@
     </h1>
     <BreadcrumbsBasic />
     <CardProduct />
+    <TheReviews />
   </div>
 </template>
 
 <script setup lang="ts">
 import BreadcrumbsBasic from '~/ui/breadcrumbs/breadcrumbs-basic.vue';
 import CardProduct from '~/components/card/card-product/card-product.vue';
+import TheReviews from '~/components/reviews/the-reviews.vue';
 
 const route = useRoute();
 const pageId = route.params.id;
