@@ -15,50 +15,16 @@
         :handle-item-decrease="handleItemDecrease"
       />
       <div class="cart__footer">
-        <div class="cart__coupon coupon">
-          <h2 class="title title--little coupon__title">
-            Промокод на скидку
-          </h2>
-          <p class="coupon__info">
-            Введите свой промокод, если он у вас есть.
-          </p>
-          <form
-            id="coupon-form"
-            class="coupon__form"
-            method="post"
-            action="/"
-          >
-            <div class="form-input coupon__input">
-              <label class="visually-hidden">Промокод</label>
-              <input
-                id="coupon"
-                type="text"
-                placeholder="Введите промокод"
-                name="coupon"
-              >
-              <p class="form-input__message form-input__message--success">
-                Промокод принят
-              </p>
-            </div>
-            <button class="button button--big coupon__button">
-              Применить
-            </button>
-          </form>
-        </div>
-        <div class="cart__total-info">
-          <p class="cart__total-item">
-            <span class="cart__total-value-name">Всего:</span><span class="cart__total-value">52 000 ₽</span>
-          </p>
-          <p class="cart__total-item">
-            <span class="cart__total-value-name">Скидка:</span><span class="cart__total-value cart__total-value--bonus">- 3000 ₽</span>
-          </p>
-          <p class="cart__total-item">
-            <span class="cart__total-value-name">К оплате:</span><span class="cart__total-value cart__total-value--payment">49 000 ₽</span>
-          </p>
-          <button class="button button--red button--big cart__order-button">
-            Оформить заказ
-          </button>
-        </div>
+        <CartCoupon
+          :handle-coupon-submit="handleCouponSubmit"
+          :has-coupon-proceeded="hasCouponProceeded"
+          :is-coupon-applied="isCouponApplied"
+        />
+        <CartTotal
+          :total="totalSum"
+          :discount="discountValue"
+          :on-purchase-click="onPurchaseClick"
+        />
       </div>
     </div>
   </div>
@@ -115,6 +81,11 @@ const mockData = ref<
   },
 ]);
 
+const totalSum = ref(0);
+const discountValue = ref(0);
+const hasCouponProceeded = ref(false);
+const isCouponApplied = ref(false);
+
 const handleItemRemove = (itemArticul: string) => {
   mockData.value = mockData.value.filter(item => item.articul !== itemArticul);
 };
@@ -142,4 +113,23 @@ const handleItemDecrease = (itemArticul: string) => {
     return item;
   });
 };
+
+const handleCouponSubmit = () => {
+  hasCouponProceeded.value = true;
+  if (discountValue.value) {
+    discountValue.value = 0;
+    isCouponApplied.value = false;
+    return;
+  }
+
+  isCouponApplied.value = true;
+  discountValue.value = 0.15;
+};
+
+const onPurchaseClick = () => {
+};
+
+watchEffect(() => {
+  totalSum.value = mockData.value.reduce((acc, item) => acc + (item.price * item.guitarCount), 0);
+});
 </script>
