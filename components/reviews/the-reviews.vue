@@ -2,10 +2,14 @@
   <section class="reviews">
     <h3 class="reviews__title title title--bigger">
       Отзывы
-    </h3><a
+    </h3>
+    <button
       class="button button--red-border button--big reviews__sumbit-button"
-      href="#"
-    >Оставить отзыв</a>
+      type="button"
+      @click="onModalOpen"
+    >
+      Оставить отзыв
+    </button>
 
     <Review
       v-for="review in mockReviews"
@@ -13,7 +17,10 @@
       :key="review.id"
     />
 
-    <button class="button button--medium reviews__more-button">
+    <button
+      class="button button--medium reviews__more-button"
+      type="button"
+    >
       Показать еще отзывы
     </button>
     <NuxtLink :to="{ hash: '#header' }">
@@ -28,6 +35,12 @@
 
 <script setup lang="ts">
 import Review from '~/components/reviews/components/review.vue';
+
+type TheReviewsProps = {
+  onModalOpen: () => void
+};
+
+defineProps<TheReviewsProps>();
 
 const mockReviews = [
   {

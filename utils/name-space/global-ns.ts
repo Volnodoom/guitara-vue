@@ -1,9 +1,9 @@
 export const RatingCorrelation = {
-  1: 'Плохо',
-  2: 'Неудовлетворительно',
-  3: 'Удовлетворительно',
-  4: 'Хорошо',
-  5: 'Отлично',
+  1: 'Poor',
+  2: 'Unsatisfactory',
+  3: 'Satisfactory',
+  4: 'Good',
+  5: 'Excellent',
 };
 
 export enum SocialsNS {
@@ -15,4 +15,11 @@ export enum SocialsNS {
 export enum ChangeCountLib {
   Increase = 'increase',
   Decrease = 'decrease',
+}
+
+export enum LoadingStatusLib {
+  Idle = 'idle',
+  Loading = 'loading',
+  Success = 'success',
+  Error = 'error',
 }

@@ -17,7 +17,7 @@
       </svg><a
         class="link"
         href="tel:88125005050"
-      > 8-812-500-50-50</a>
+      > 8&#8209;812&#8209;500&#8209;50&#8209;50</a>
     </div>
     <p class="footer__nav-content">
       Режим работы:<br><span class="footer__span">

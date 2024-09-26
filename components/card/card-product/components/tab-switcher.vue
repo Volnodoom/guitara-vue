@@ -1,6 +1,6 @@
 <template>
   <a
-    class="button button--medium tabs__button button--prevent-hover"
+    class="button button--medium tabs__button"
     :class="{
       'button--black-border': !isSelected,
       'button--prevent-hover': isSelected,

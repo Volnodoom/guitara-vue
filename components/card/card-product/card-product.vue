@@ -9,14 +9,14 @@
       alt=""
     >
     <ProductInfo
-      :guitar-name="mockData.guitarName"
-      :articul="mockData.articul"
-      :guitar-type="mockData.guitarType"
-      :number-of-strings="mockData.numberOfStrings"
-      :description="mockData.description"
-      :rating="mockData.rating"
+      :guitar-name="guitarName"
+      :articul="articul"
+      :guitar-type="guitarType"
+      :number-of-strings="numberOfStrings"
+      :description="description"
+      :rating="rating"
     />
-    <ProductPrice :price="mockData.price" />
+    <ProductPrice :price="price" />
   </div>
 </template>
 
@@ -24,13 +24,15 @@
 import ProductInfo from '~/components/card/card-product/components/product-info.vue';
 import ProductPrice from '~/components/card/card-product/components/product-price.vue';
 
-const mockData = {
-  guitarName: 'СURT Z30 Plus',
-  articul: 'SO754565',
-  guitarType: 'Электрогитара',
-  numberOfStrings: '6 струнная',
-  description: 'Гитара подходит как для старта обучения, так и для домашних занятий или использования в полевых условиях, например, в походах или для проведения уличных выступлений. Доступная стоимость, качество и надежная конструкция, а также приятный внешний вид, который сделает вас звездой вечеринки.',
-  price: 129500,
-  rating: 4,
+type CardProductProps = {
+  guitarName: string
+  articul: string
+  guitarType: string
+  numberOfStrings: string
+  description: string
+  rating: number
+  price: number
 };
+
+defineProps<CardProductProps>();
 </script>

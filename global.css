@@ -970,11 +970,11 @@ button,
   background-size: 255px 95px;
 }
 
-.modal--review .modal__content {
-  width: 410px;
-  padding-top: 26px;
-  padding-bottom: 29px;
-}
+/*.modal--review .modal__content {*/
+/*  width: 410px;*/
+/*  padding-top: 26px;*/
+/*  padding-bottom: 29px;*/
+/*}*/
 
 .modal__wrapper {
   position: relative;
@@ -1025,11 +1025,12 @@ button,
 
 .modal__content {
   position: relative;
-
   overflow: hidden;
+}
 
+.modal__content-review {
   width: 430px;
-  padding: 40px;
+  padding: 26px 40px 29px;
 
   border-radius: 4px;
   background-color: #fefafa;
@@ -2126,6 +2127,7 @@ button,
   display: block;
 
   margin: 0;
+  margin-bottom: 5px;
   padding-right: 5px;
 
   font-size: 10px;

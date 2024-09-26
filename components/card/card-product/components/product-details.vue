@@ -18,30 +18,32 @@
         class="tabs__table"
         :class="{ hidden: activeTabName !== TabNames.Characteristics }"
       >
-        <tr class="tabs__table-row">
-          <td class="tabs__title">
-            Артикул:
-          </td>
-          <td class="tabs__value">
-            {{ articul }}
-          </td>
-        </tr>
-        <tr class="tabs__table-row">
-          <td class="tabs__title">
-            Тип:
-          </td>
-          <td class="tabs__value">
-            {{ guitarType }}
-          </td>
-        </tr>
-        <tr class="tabs__table-row">
-          <td class="tabs__title">
-            Количество струн:
-          </td>
-          <td class="tabs__value">
-            {{ numberOfStrings }} струнная
-          </td>
-        </tr>
+        <tbody>
+          <tr class="tabs__table-row">
+            <td class="tabs__title">
+              Артикул:
+            </td>
+            <td class="tabs__value">
+              {{ articul }}
+            </td>
+          </tr>
+          <tr class="tabs__table-row">
+            <td class="tabs__title">
+              Тип:
+            </td>
+            <td class="tabs__value">
+              {{ guitarType }}
+            </td>
+          </tr>
+          <tr class="tabs__table-row">
+            <td class="tabs__title">
+              Количество струн:
+            </td>
+            <td class="tabs__value">
+              {{ numberOfStrings }} струнная
+            </td>
+          </tr>
+        </tbody>
       </table>
       <p
         class="tabs__product-description"
