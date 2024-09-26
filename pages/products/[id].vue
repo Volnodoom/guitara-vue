@@ -28,8 +28,8 @@ import TheReviews from '~/components/reviews/the-reviews.vue';
 import TheModal from '~/ui/modal/the-modal.vue';
 
 const isActive = ref(false);
-const route = useRoute();
-const pageId = route.params.id;
+// const route = useRoute();
+// const pageId = route.params.id;
 
 const mockData = {
   guitarName: 'СURT Z30 Plus',

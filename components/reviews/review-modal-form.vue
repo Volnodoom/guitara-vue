@@ -5,52 +5,32 @@
   <h3 class="modal__product-name title title--medium-20 title--uppercase">
     {{ productName }}
   </h3>
-  <form class="form-review">
+  <form
+    class="form-review"
+    @submit="handleSubmit"
+  >
     <div class="form-review__wrapper">
       <div class="form-review__name-wrapper">
         <FormLineBase
-          label-for="userName"
-          :text-error="nameValidationStatus.errorMessage"
+          :label-for="userName"
           label-name="Your Name"
-          :status="nameValidationStatus.validationStatus"
         />
       </div>
       <div class="rating__wrapper">
-        <span class="form-review__label form-review__label--required rating__label-correction">
-          Product rating
-        </span>
-        <div class="rate rate--reverse rate-correction">
-          <RatingRadioBtn
-            v-for="item in Array.from({ length: 5 }, (_, i) => i + 1).reverse()"
-            :key="item"
-            :lvl="item"
-          />
-        </div>
-        <FormLineNotification
-          text-success=""
-          :text-error="ratingValidationStatus.errorMessage"
-          class-name="rate__message rating__message-correction"
-          :status="ratingValidationStatus.validationStatus"
-        />
+        <FormLineRating :input-name="rate" />
       </div>
     </div>
     <FormLineBase
-      label-for="adv"
-      :text-error="advantagesValidationStatus.errorMessage"
+      :label-for="adv"
       label-name="Advantages"
-      :status="advantagesValidationStatus.validationStatus"
     />
     <FormLineBase
-      label-for="disadv"
-      :text-error="disadvantagesValidationStatus.errorMessage"
+      :label-for="disadv"
       label-name="Disadvantages"
-      :status="disadvantagesValidationStatus.validationStatus"
     />
     <FormLineBase
-      label-for="comment"
-      :text-error="commentValidationStatus.errorMessage"
+      :label-for="comment"
       label-name="Comments"
-      :status="commentValidationStatus.validationStatus"
     />
     <button
       class="button button--medium-20 form-review__button"
@@ -71,67 +51,47 @@
 </template>
 
 <script setup lang="ts">
-import { LoadingStatusLib } from '~/utils/name-space/global-ns';
 import FormLineBase from '~/ui/form/form-line-base.vue';
-import RatingRadioBtn from '~/components/reviews/components/rating-radio-btn.vue';
-import FormLineNotification from '~/ui/notification/form-line-notification/form-line-notification.vue';
+import FormLineRating from '~/components/reviews/components/form-line-rating.vue';
 
 type ReviewModalFormProps = {
   productName: string
   onModalClose: () => void
 };
 
-defineProps<ReviewModalFormProps>();
+const { onModalClose } = defineProps<ReviewModalFormProps>();
+const userName = 'userName';
+const rate = 'rate';
+const adv = 'adv';
+const disadv = 'disadv';
+const comment = 'comment';
 
-const MessageListLib = {
-  Empty: 'Please fill out the field',
+const handleSubmit = (evt: Event) => {
+  evt.preventDefault();
+  const formElement = evt.target as HTMLFormElement;
+  const formData = new FormData(formElement);
+  const formUserName = formData.get(userName) as string;
+  const formRate = Number(formData.get(rate) as string);
+  const formAdv = formData.get(adv) as string;
+  const formDisadv = formData.get(disadv) as string;
+  const formComment = formData.get(comment) as string;
 
+  console.log('data to send: ', {
+    formUserName,
+    formRate,
+    formAdv,
+    formDisadv,
+    formComment,
+  });
+
+  onModalClose();
+  formElement.reset();
 };
-
-const nameValidationStatus = ref({
-  validationStatus: LoadingStatusLib.Error,
-  errorMessage: MessageListLib.Empty,
-});
-
-const ratingValidationStatus = ref({
-  validationStatus: LoadingStatusLib.Error,
-  errorMessage: MessageListLib.Empty,
-});
-
-const advantagesValidationStatus = ref({
-  validationStatus: LoadingStatusLib.Error,
-  errorMessage: MessageListLib.Empty,
-});
-
-const disadvantagesValidationStatus = ref({
-  validationStatus: LoadingStatusLib.Error,
-  errorMessage: MessageListLib.Empty,
-});
-
-const commentValidationStatus = ref({
-  validationStatus: LoadingStatusLib.Error,
-  errorMessage: MessageListLib.Empty,
-});
 </script>
 
 <style scoped>
 .rating__wrapper {
   position: relative;
   width: 145px;
-}
-
-.rating__message-correction {
-  width: 145px;
-  bottom: 5px;
-  text-align: end;
-  padding-right: 12px;
-}
-
-.rate-correction {
-  justify-content: end;
-}
-
-.rating__label-correction {
-  right: -50px;
 }
 </style>

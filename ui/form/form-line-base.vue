@@ -7,28 +7,49 @@
   </label>
   <input
     :id="labelFor"
+    :name="labelFor"
     class="form-review__input"
     type="text"
     autocomplete="off"
+    required
+    @input="handleInput"
   >
   <FormLineNotification
-    text-success=""
-    :text-error="textError"
     class-name="form-review__warning"
-    :status="status"
+    text-success=""
+    :text-error="generalValidationStatus.errorMessage"
+    :status="generalValidationStatus.validationStatus"
   />
 </template>
 
 <script setup lang="ts">
 import FormLineNotification from '~/ui/notification/form-line-notification/form-line-notification.vue';
-import type { LoadingStatusLib } from '~/utils/name-space/global-ns';
+import { LoadingStatusLib } from '~/utils/name-space/global-ns';
 
 type FormLineBaseProps = {
   labelName: string
   labelFor: string
-  textError: string
-  status: LoadingStatusLib
 };
 
 defineProps<FormLineBaseProps>();
+
+const MessageListLib = {
+  Empty: 'Please fill out the field',
+};
+
+const generalValidationStatus = ref({
+  validationStatus: LoadingStatusLib.Idle,
+  errorMessage: MessageListLib.Empty,
+});
+
+const handleInput = (evt: Event) => {
+  const value = (evt.target as HTMLInputElement).value;
+
+  if (value.trim() === '') {
+    generalValidationStatus.value.validationStatus = LoadingStatusLib.Error;
+    return;
+  }
+
+  generalValidationStatus.value.validationStatus = LoadingStatusLib.Idle;
+};
 </script>
